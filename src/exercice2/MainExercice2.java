@@ -1,6 +1,10 @@
 package exercice2;
 
 import exercice2.models.*;
+import datamocklib.TxtHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainExercice2 implements Exo2 {
 
@@ -14,6 +18,14 @@ public class MainExercice2 implements Exo2 {
      */
     @Override
     public void displayPersonFromChambery() {
+        List<String> person = TxtHelper.getDataFromTxt("server.txt");
+        //System.out.println(person);
+        TxtHelper.clearDataLocal();
+
+        for (String iterable_element : person) {     
+            TxtHelper.insertDataInTxt(iterable_element, "local.txt");
+        }
+
         System.out.println("todo");
     }
 
