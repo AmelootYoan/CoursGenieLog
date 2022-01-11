@@ -1,6 +1,7 @@
 package exercice1;
 
 import datamocklib.Person;
+import datamocklib.TxtHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,8 +10,8 @@ public class MainExercice1 {
 
     // Format du fichier : firstName,lastName,birthDate,gender,cityOfResidence,cityOfBirth
     // Pas de header
-    public List<Person> parse(List<String> data) {
-        // A COMPLETER
+    public static List<Person> parse(List<String> data) {
+        
         return new ArrayList<Person>();
     }
 
@@ -23,7 +24,9 @@ public class MainExercice1 {
          * - Calculer le nombre de personnes nées dans chaque ville avec les données obtenues.
          * Les données contiennent une trentaine de villes, Bonne chance !
         */
-
-
+        List<String> person = TxtHelper.getDataFromTxt("persons.txt");
+        List<Person> person_parsed = parse(person);
+        System.out.println(person);
+        System.out.println(person_parsed);
     }
 }
